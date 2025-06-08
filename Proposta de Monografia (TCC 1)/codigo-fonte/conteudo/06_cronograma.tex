@@ -1,0 +1,69 @@
+\subsection{Cronograma de Atividades}\label{sec:cronograma}
+
+De acordo com o PMBOK, o cronograma de atividades é uma ferramenta fundamental no gerenciamento de projetos que organiza e controla o trabalho necessário para atingir os objetivos do projeto \cite{Anunciacao2020,Ramos2020}. Ele é um documento que detalha todas as atividades a serem realizadas, suas durações, sequências e dependências, além de estabelecer prazos para o início e o término de cada tarefa \cite{PMBOK2021}.
+
+Conforme \citeonline{PMBOK2021} destaca, os objetivos do cronograma de atividades são:
+\begin{itemize}[itemsep=0pt, leftmargin=2.5cm]
+    \item \textbf{Planejamento e Organização:} ele ajuda a planejar de forma detalhada todas as etapas do projeto, estabelecendo uma sequência lógica para a realização das atividades e permitindo que todos os envolvidos compreendam suas responsabilidades.
+    \item \textbf{Controle de Tempo:} serve para monitorar o progresso do projeto em relação ao tempo, ajudando a identificar se o cronograma está sendo seguido ou se há atrasos que precisam de correção.
+    \item \textbf{Alocação de Recursos:} permite a distribuição eficaz de recursos (pessoas, equipamentos, etc.) de acordo com a disponibilidade e as necessidades de cada atividade, minimizando conflitos e ociosidade.
+    \item \textbf{Comunicação:} facilita a comunicação entre as partes interessadas, oferecendo uma visão clara do status do projeto e dos próximos passos.
+    \item \textbf{Identificação de Riscos:} ao mapear as dependências entre atividades e estimar prazos, é possível prever pontos críticos e riscos que podem impactar o cronograma, permitindo um planejamento proativo.
+\end{itemize}
+
+Vale destacar que, para o projeto em questão, não é necessário definir novamente, nesta seção, suas fases e atividades constituintes, pois essas já foram estabelecidas e detalhadas na seção ``Fases do Projeto'' (ver Seção \ref{sec:fases_projeto}).
+
+Dessa forma, nesta seção, basta apenas incluir um parágrafo introdutório e uma re\-presentação visual de um cronograma. Geralmente, tal representação pode ser feita em formato tabular ou por meio de um diagrama de Gantt. Abaixo, segue um modelo de cronograma ilustrado em um diagrama de Gantt.
+
+\begin{figure}[!ht]
+    \centering
+    \caption{Cronograma de Atividades (ATV)}\label{fig:cronograma}
+    % O 2º parâmetro do "ganttchart" é a quantidade total de meses, ou seja, a duração total.
+    \begin{ganttchart}{1}{24}
+        % Ajuste o espaçamento das ATVs e a altura da barra de ATV conforme necessário.
+        \ganttset{bar height=.5, y unit chart=0.8cm}
+         % Para cada ano (1º parâmetro), informar a duração em meses (2º parâmetro) para tal ano.
+        \gantttitle{2024}{10}
+        \gantttitle{2025}{12}
+        \gantttitle{2026}{2} \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % O 1º parâmetro corresponde ao intervalo mensal de um respectivo ano,
+        % enquanto que o 2º parâmetro equivale o incremento mensal.
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \gantttitlelist{3,...,12}{1}
+        \gantttitlelist{1,...,12}{1}
+        % A quebra de linha padrão do LaTeX (\\) é obrigatória para o último \gantttitlelist.
+        \gantttitlelist{1,...,2}{1} \\
+
+        % No dois últimos parâmetros, informar o intervalo da duração total.
+        \ganttgroup{Duração Total}{1}{24} \\
+
+        %%%%%%%%%%%%%%%%% Fase 1 - Proposta de TCC %%%%%%%%%%%%%%%%%
+        % Para cada fase (\ganttgroup), informar o intervalo da duração em meses (dois últimos parâmetros).
+        \ganttgroup{Fase 1}{1}{12} \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Para cada ATV, informar as posições inicial e final do intervalo
+        % de duração (dois últimos parâmetros).
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % A 1º ATV deve ter como quebra de linha o comando padrão do LaTeX (\\).
+        \ganttbar{ATV 1}{1}{3} \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Da 2º até a última ATV de cada fase, é necessário a quebra de linha "\ganttnewline".
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Se uma ATV depende de uma ATV anterior, usa-se o comando "\ganttlinkedbar"
+        % ao invés do "\ganttbar".
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ganttlinkedbar{ATV 2}{4}{6} \ganttnewline
+        \ganttbar{ATV 3}{7}{9} \ganttnewline
+        \ganttlinkedbar{ATV 4}{10}{12} \ganttnewline
+
+        %%%%%%%%%%%%%%%%% Fase 2 - Defesa de Monografia %%%%%%%%%%%%%%%%%
+        \ganttgroup{Fase 2}{13}{24} \\
+        \ganttbar{ATV 5}{13}{14} \\
+        \ganttlinkedbar{ATV 6}{15}{16} \ganttnewline
+        \ganttlinkedbar{ATV 7}{17}{18} \ganttnewline
+        \ganttbar{ATV 8}{19}{20} \ganttnewline
+        \ganttlinkedbar{ATV 9}{22}{24} \ganttnewline
+    \end{ganttchart}
+    \fonte{Autoria Própria (2024).}
+\end{figure}
