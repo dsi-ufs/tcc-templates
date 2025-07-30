@@ -19,7 +19,7 @@
 % Definição do idioma de escrita do texto, bem como as regras de hifenização.
 \usepackage[brazil]{babel}
 % Estilo de citação da ABNT.
-\usepackage[alf]{abntex2cite}
+\usepackage[alf,abnt-and-type=&]{abntex2cite}
 % Espaçamento entre linhas.
 \usepackage{setspace}
 % Fonte Times New Roman.
